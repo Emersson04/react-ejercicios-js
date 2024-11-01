@@ -1,0 +1,112 @@
+<>
+      <div className="App">
+        <div className="container-fluid">
+          <div className="row mt-3">
+            <div className="col-md-4 offset-4">
+              <div className="d-grid mx-auto">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="row mt-3">
+            <div className="col-12 col-lg-8 offset-lg-2">
+              <div className="table-responsive">
+                <table className="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>persona</th>
+                      <th>email</th>
+                      <th>numero de documento</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody className="table-group-divider">
+                    {usuarios.map((usuario, id) => (
+                      <tr key={usuario.idUsuarios}>
+                        <td>{usuario.idUsuarios}</td>
+                        <td>{usuario.us_nombre}</td>
+                        <td>{usuario.us_correo}</td>
+                        <td>{usuario.us_numero_documento}</td>
+                        <td>
+                          <button className="btn btn-warning">
+                            <i className="fa-regular fa-trash-can"></i>
+                          </button>
+                          <button className="btn btn-danger">eliminar</button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Modal title
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                {/* formulario aqui */}
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">
+                      Email address
+                    </label>
+
+                    <input type="text" className="form-control" />
+                    <div id="emailHelp" class="form-text">
+                      We'll never share your email with anyone else.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">
+                      Password
+                    </label>
+                    <input type="text" className="form-control" />
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input
+                      type="text"
+                      className="form-check-input"
+                      name=""
+                      id=""
+                    />
+                    <label class="form-check-label" for="exampleCheck1">
+                      Check me out
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
